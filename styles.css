@@ -1,0 +1,35 @@
+body {
+    background-color: aqua;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* button {
+    padding: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+} */
+
+a {
+    background-color: black;
+      color: white;
+      padding: 1em 1.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 5px;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      display: block;
+    }
+    
+    a:hover {
+      background-color: #555;
+    }
