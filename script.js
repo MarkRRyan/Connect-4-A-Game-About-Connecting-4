@@ -11,7 +11,7 @@ const playerTwoColor = 'green';
 
 for (i = 0; i < spaceCell.length; i ++){
     spaceCell[i].addEventListener('click', (coord) =>{
-        console.log(`${coord.target.parentElement.rowIndex},${e.target.cellIndex}`)
+        console.log(`${coord.target.parentElement.rowIndex},${coord.target.cellIndex}`)
     });
 };
 
@@ -41,3 +41,10 @@ function changeColor(coord) {
         }
     }
 }
+
+// resetBtn.addEventListener('click', () =>{
+//     spaceBoard.forEach(space => {
+//         space.style.backgroundColor = 'white';
+//     });
+//     return
+// });

@@ -21,14 +21,9 @@
 }
 
 .reset{
+    background-color: white;
     position: absolute;
-    top:32rem;
-    transform: translate(-50%);
-    width: 100px;
-    height: 30px;
-    padding: 0.3rem;
     border: 1px solid black;
-    background: white;
-    cursor: pointer;
-    transition: .5s;
+    /* height: 10px;
+    width: 13px; */
 }
