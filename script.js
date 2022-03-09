@@ -55,31 +55,10 @@ function changeColor(coord) {
     }
 }
 
-function hasPlayerWon(currentPlayer) {
-    for (let i = 0; i < spaceCell.length; i++) {
-        if (spaceCell[41] === currentPlayer) {
-             if (spaceCell[40] === currentPlayer && spaceCell[39] === currentPlayer && spaceCell[38] === currentPlayer) {
-                return true;
-            }
-            if (spaceCell[34] === currentPlayer && spaceCell[27] === currentPlayer && spaceCell[20] === currentPlayer) {
-                return true;
-            }
-            if (spaceCell[33] === currentPlayer && spaceCell[25] === currentPlayer && spaceCell[17] === currentPlayer) {
-                return true;
-            }
-
-        }
-        if (spaceCell[35] === currentPlayer) {
-            if (spaceCell[36] === currentPlayer && spaceCell[37] === currentPlayer && spaceCell[38] === currentPlayer) {
-                return true;
-            }
-            if (spaceCell[28] === currentPlayer && spaceCell[21] === currentPlayer && spaceCell[14] === currentPlayer) {
-                return true;
-            }
-            if (spaceCell[29] === currentPlayer && spaceCell[23] === currentPlayer && spaceCell[17] === currentPlayer) {
-                return true;
-            }
-        }
+function hasPlayerWon() {
+    winningArr = []
+    for (i = 0; i < spaceCell.length; i++) {
+        if (winningArr == spaceCell[i].backgroundColor === currentPlayer);
     }
 }
 
