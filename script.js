@@ -33,42 +33,52 @@ function changeColor(coord) {
             row.push(spaceRow[i].children[column]);
             if (currentPlayer === playerOne) {
                 row[0].style.backgroundColor = 'blue';
-                if (hasPlayerWon( )) {
+                if (hasPlayerWon(playerOne)) {
                     return alert('You Won!');
+                } else if (draw()) {
+                    return alert('You Draw');
+                } else {
+                    return currentPlayer = playerTwo;
                 }
-                // playerTurn.innerHTML = `${playerTwo}'s Turn`; 'broken code'
-                return currentPlayer = playerTwo;
+                
             } else {
                 row[0].style.backgroundColor = 'green';
                 if (hasPlayerWon( )) {
                     return alert('You Won!');
+                } else if (draw()) {
+                    return alert('You Draw');
+                } else {
+                    return currentPlayer = playerOne;
                 }
-                return currentPlayer = playerOne;
             }
         }
     }
 }
 
-const hasPlayerWon = (player) => {
-    if (spaceCell[41] === player) {
-        if (spaceCell[40] === player && spaceCell[39] === player && spaceCell[38] === player) {
-            return true;
-        }
-        if (spaceCell[34] === player && spaceCell[27] === player && spaceCell[20] === player) {
-            return true;
-        }
-        if (spaceCell[33] === player && spaceCell[25] === player && spaceCell[17] === player) {
-            return true;
-        }
+function hasPlayerWon(currentPlayer) {
+    for (let i = 0; i < spaceCell.length; i++) {
+        if (spaceCell[41] === currentPlayer) {
+             if (spaceCell[40] === currentPlayer && spaceCell[39] === currentPlayer && spaceCell[38] === currentPlayer) {
+                return true;
+            }
+            if (spaceCell[34] === currentPlayer && spaceCell[27] === currentPlayer && spaceCell[20] === currentPlayer) {
+                return true;
+            }
+            if (spaceCell[33] === currentPlayer && spaceCell[25] === currentPlayer && spaceCell[17] === currentPlayer) {
+                return true;
+            }
 
-    }
-    if (spaceCell[35] === player) {
-        if (spaceCell[36] === player && spaceCell[37] === player && spaceCell[38] === player) {
-            return true;
-        }if (spaceCell[28] === player && spaceCell[21] === player && spaceCell[14] === player) {
-            return true;
-        }if (spaceCell[29] === player && spaceCell[23] === player && spaceCell[17] === player) {
-            return true;
+        }
+        if (spaceCell[35] === currentPlayer) {
+            if (spaceCell[36] === currentPlayer && spaceCell[37] === currentPlayer && spaceCell[38] === currentPlayer) {
+                return true;
+            }
+            if (spaceCell[28] === currentPlayer && spaceCell[21] === currentPlayer && spaceCell[14] === currentPlayer) {
+                return true;
+            }
+            if (spaceCell[29] === currentPlayer && spaceCell[23] === currentPlayer && spaceCell[17] === currentPlayer) {
+                return true;
+            }
         }
     }
 }
