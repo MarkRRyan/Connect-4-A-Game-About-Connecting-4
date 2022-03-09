@@ -17,39 +17,12 @@ for (i = 0; i < spaceCell.length; i ++){
 };
 
 let currentPlayer = playerOne;
-playerTurn.innerHTML = `${playerOne}'s turn!`
+// playerTurn.innerHTML = `${playerOne}'s turn!`
 
 Array.prototype.forEach.call(spaceCell, (cell) => {
     cell.addEventListener('click', changeColor);
     cell.style.backgroundColor = 'white';
 });
-
-// function changeColor(coord) {
-//     let column = coord.target.cellIndex;
-//     let row = [];
-
-//     for (let i = 5; i > -1; i--) {
-//         if (spaceRow[i].children[column].style.backgroundColor == 'white'){            
-//             row.push(spaceRow[i].children[column]);
-//             if (currentPlayer === playerOne) {
-//                 row[0].style.backgroundColor = 'blue';
-//                 if (hasPlayerWon(currentPlayer)) {
-//                     alert('You Won!');
-//                     return;
-//                 }
-//                 // playerTurn.innerHTML = `${playerTwo}'s Turn`; 'broken code'
-//                 return currentPlayer = playerTwo;
-//             } else {
-//                 row[0].style.backgroundColor = 'green';
-//                 if (hasPlayerWon(currentPlayer)) {
-//                     alert('You Won!');
-//                     return;
-//                 }
-//                 return currentPlayer = playerOne;
-//             }
-//         }
-//     }
-// }
 
 function changeColor(coord) {
     let column = coord.target.cellIndex;
@@ -76,11 +49,6 @@ function changeColor(coord) {
     }
 }
 
-
-// function colorMatchCheck(one, two, three, four) {
-//     return (one == two && one === three && one === four && one !== 'white');
-// }
-
 const hasPlayerWon = (player) => {
     if (spaceCell[41] === player) {
         if (spaceCell[40] === player && spaceCell[39] === player && spaceCell[38] === player) {
@@ -100,6 +68,18 @@ const hasPlayerWon = (player) => {
         }if (spaceCell[28] === player && spaceCell[21] === player && spaceCell[14] === player) {
             return true;
         }if (spaceCell[29] === player && spaceCell[23] === player && spaceCell[17] === player) {
+            return true;
+        }
+    }
+}
+
+function draw() {
+    let fullSpaces = []
+    for (i = 0; i < spaceCell.length; i++) {
+        if (spaceCell[i].style.backgroundColor !== 'white') {
+            fullSpaces.push(spaceCell[i]);
+        }
+        if (fullSpaces.length === spaceCell.length) {
             return true;
         }
     }
