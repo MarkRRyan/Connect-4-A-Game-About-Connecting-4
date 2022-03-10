@@ -13,11 +13,11 @@ Connect 4 is a two-player connection board game, in which the players choose a c
 In this project I will be using a combination of HTML, CSS, and Javascript to recreated this game
 ***
 ### To-do List
-- [ ] Get project concept approved
-- [ ] Build out outline of HTML pages and add basic CSS
-- [ ] Build out the game board
-- [ ] Add fuctionality to the game board
-- [ ] Program Logic and set win conditions
+- [x] Get project concept approved
+- [x] Build out outline of HTML pages and add basic CSS
+- [x] Build out the game board
+- [x] Add fuctionality to the game board
+- [x] Program Logic and set win conditions
 - [ ] Add Score Keeping
 - [ ] Add reset fuctionality to reset board without resetting the score
 - [ ] Refine CSS

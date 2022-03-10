@@ -1,11 +1,10 @@
-const spaceBoard = document.querySelector('.space');
+const spaces = document.querySelectorAll('.space');
 const spaceRow = document.getElementsByTagName('tr');
 const spaceCell = document.getElementsByTagName('td');
-const resetBtn = document.querySelector('.reset');
+const restartBtn = document.querySelector('.reset');
 const playerOne = 'Blue'
 const playerTwo = 'Green'
 let currentPlayer = playerOne;
-
 
 Array.prototype.forEach.call(spaceCell, (cell) => {
     cell.addEventListener('click', changeColor);
@@ -89,10 +88,9 @@ function draw() {
     }
 }
 
-resetBtn.addEventListener('click', () => {
-    spaceBoard.forEach(space => {
-        space.style.backgroundColor = 'white';
+restartBtn.addEventListener('click', () => {
+    spaces.forEach(slot => {
+        slot.style.backgroundColor = 'white';
     });
-    playerTurn.style.color = 'black';
     return (currentPlayer === 1);
 });
