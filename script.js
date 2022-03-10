@@ -44,7 +44,6 @@ function changeColor(coord) {
         }
     }
 }
-
 function inRow(one, two, three, four){
     return (one === two && one === three && one === four && one !== 'white');
 }
