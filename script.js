@@ -1,23 +1,13 @@
 const spaceBoard = document.querySelector('.space');
 const spaceRow = document.getElementsByTagName('tr');
 const spaceCell = document.getElementsByTagName('td');
-let playerTurn = document.querySelector('playerTurn');
 const resetBtn = document.querySelector('.reset');
 const playerOne = 'Blue'
 const playerTwo = 'Green'
 const playerOneColor = 'blue';
 const playerTwoColor = 'green';
-
-
-
-for (i = 0; i < spaceCell.length; i ++){
-    spaceCell[i].addEventListener('click', (coord) =>{
-        console.log(`${coord.target.parentElement.rowIndex},${coord.target.cellIndex}`)
-    });
-};
-
 let currentPlayer = playerOne;
-// playerTurn.innerHTML = `${playerOne}'s turn!`
+
 
 Array.prototype.forEach.call(spaceCell, (cell) => {
     cell.addEventListener('click', changeColor);
@@ -33,7 +23,7 @@ function changeColor(coord) {
             row.push(spaceRow[i].children[column]);
             if (currentPlayer === playerOne) {
                 row[0].style.backgroundColor = 'blue';
-                if (hasPlayerWon(playerOne)) {
+                if (horiz() || vert() || diagonal() || diagonal2()){
                     return alert('You Won!');
                 } else if (draw()) {
                     return alert('You Draw');
@@ -43,7 +33,7 @@ function changeColor(coord) {
                 
             } else {
                 row[0].style.backgroundColor = 'green';
-                if (hasPlayerWon( )) {
+                if (horiz() || vert() || diagonal() || diagonal2()) {
                     return alert('You Won!');
                 } else if (draw()) {
                     return alert('You Draw');
@@ -55,13 +45,51 @@ function changeColor(coord) {
     }
 }
 
-function hasPlayerWon() {
-    winningArr = []
-    for (i = 0; i < spaceCell.length; i++) {
-        if (winningArr == spaceCell[i].backgroundColor === currentPlayer);
-    }
+function inRow(one, two, three, four){
+    return (one === two && one === three && one === four && one !== 'white');
 }
 
+function vert(){
+    for (let i = 0; i < 7; i++){
+        for (let row = 0; row < 3; row++){
+            if (inRow(spaceRow[row].children[i].style.backgroundColor, spaceRow[row+1].children[i].style.backgroundColor,
+                                spaceRow[row+2].children[i].style.backgroundColor,spaceRow[row+3].children[i].style.backgroundColor)){
+                return true;
+            };
+        }   
+    }
+}
+function horiz(){
+    for (let row = 0; row < spaceRow.length; row++){
+        for (let i =0; i < 4; i++){
+           if (inRow(spaceRow[row].children[i].style.backgroundColor,spaceRow[row].children[i+1].style.backgroundColor, 
+                                spaceRow[row].children[i+2].style.backgroundColor, spaceRow[row].children[i+3].style.backgroundColor)){
+               return true;
+           }
+        }
+    }
+}
+function diagonal(){
+    for(let i = 0; i < 4; i++){
+        for (let row = 0; row < 3; row++){
+            if (inRow(spaceRow[row].children[i].style.backgroundColor, spaceRow[row+1].children[i+1].style.backgroundColor,
+                spaceRow[row+2].children[i+2].style.backgroundColor,spaceRow[row+3].children[i+3].style.backgroundColor)){
+                    return true;
+                }
+            }
+        }
+
+}
+function diagonal2(){
+    for(let i = 0; i < 4; i++){
+        for (let row = 5; row > 2; row--){
+            if (inRow(spaceRow[row].children[i].style.backgroundColor, spaceRow[row-1].children[i+1].style.backgroundColor,
+                spaceRow[row-2].children[i+2].style.backgroundColor,spaceRow[row-3].children[i+3].style.backgroundColor)){
+                    return true;
+            }
+        }
+    }
+}
 function draw() {
     let fullSpaces = []
     for (i = 0; i < spaceCell.length; i++) {
@@ -74,11 +102,10 @@ function draw() {
     }
 }
 
-
-
-// resetBtn.addEventListener('click', () =>{
-//     spaceBoard.forEach(space => {
-//         space.style.backgroundColor = 'white';
-//     });
-//     return
-// });
+resetBtn.addEventListener('click', () => {
+    spaceBoard.forEach(space => {
+        space.style.backgroundColor = 'white';
+    });
+    playerTurn.style.color = 'black';
+    return (currentPlayer === 1);
+});
