@@ -4,8 +4,6 @@ const spaceCell = document.getElementsByTagName('td');
 const resetBtn = document.querySelector('.reset');
 const playerOne = 'Blue'
 const playerTwo = 'Green'
-const playerOneColor = 'blue';
-const playerTwoColor = 'green';
 let currentPlayer = playerOne;
 
 
@@ -22,8 +20,8 @@ function changeColor(coord) {
         if (spaceRow[i].children[column].style.backgroundColor == 'white'){            
             row.push(spaceRow[i].children[column]);
             if (currentPlayer === playerOne) {
-                row[0].style.backgroundColor = 'blue';
-                if (winning()){
+                row[0].style.backgroundColor = 'rgb(0, 174, 255)';
+                if (hasPlayerWon()){
                     return alert('Blue is the Winner!!!');
                 } else if (draw()) {
                     return alert('You Draw');
@@ -32,8 +30,8 @@ function changeColor(coord) {
                 }
                 
             } else {
-                row[0].style.backgroundColor = 'green';
-                if (winning()) {
+                row[0].style.backgroundColor = 'rgb(14, 192, 14)';
+                if (hasPlayerWon()) {
                     return alert('Green is the Winner!!!');
                 } else if (draw()) {
                     return alert('You Draw');
@@ -48,7 +46,7 @@ function inRow(one, two, three, four){
     return (one === two && one === three && one === four && one !== 'white');
 }
 
-function winning(){
+function hasPlayerWon(){
     for (let i = 0; i < 7; i++){
         for (let row = 0; row < 3; row++){
             if (inRow(spaceRow[row].children[i].style.backgroundColor, spaceRow[row+1].children[i].style.backgroundColor,

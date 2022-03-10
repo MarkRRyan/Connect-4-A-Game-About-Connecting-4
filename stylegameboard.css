@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+h1, h2 {
+    text-align: center;
+}
+
 .gameboard {
     position: absolute;
-    height: 376px;
-    width: 430px;
-    border: 1px solid black;
-    background-color: rgba(0, 0, 0, 0.452);
+    left: 33%;
+    height: 380px;
+    width: 460x;
+    border: 2px solid black;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2016%2F05%2F25%2F339071-wood-timber-closeup-wooden_surface-texture.jpg&f=1&nofb=1');
+    background-size: cover;
+    top: 65px;
+   
 }
 .space {
     width: 60px;
@@ -21,9 +29,14 @@
 }
 
 .reset{
-    background-color: white;
     position: absolute;
+    top: 420px;
+    left: 40%;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 0.3rem;
     border: 1px solid black;
-    /* height: 10px;
-    width: 13px; */
+    background: rgba(123, 44, 214, 0.719);
+    cursor: pointer;  
 }
