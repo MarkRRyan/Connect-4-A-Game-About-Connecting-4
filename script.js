@@ -23,7 +23,7 @@ function changeColor(coord) {
                 if (hasPlayerWon()){
                     return alert('Blue is the Winner!!!');
                 } else if (draw()) {
-                    return alert('You Draw');
+                    return alert(`It's a Draw!`);
                 } else {
                     return currentPlayer = playerTwo;
                 }
@@ -33,7 +33,7 @@ function changeColor(coord) {
                 if (hasPlayerWon()) {
                     return alert('Green is the Winner!!!');
                 } else if (draw()) {
-                    return alert('You Draw');
+                    return alert(`It's a Draw!`);
                 } else {
                     return currentPlayer = playerOne;
                 }
