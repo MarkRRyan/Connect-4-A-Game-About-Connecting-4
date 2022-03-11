@@ -11,7 +11,7 @@ Connect 4 is a two-player connection board game, in which the players choose a c
 
 ![connect 4 board](https://i.imgur.com/iCvsokv.png)
 
-In this project I will be using a combination of HTML, CSS, and Javascript to recreated this game
+This project was used to create this game as seen above. 
 ***
 ### Complete in the Game
 - [x] Get project concept approved
@@ -31,6 +31,6 @@ In this project I will be using a combination of HTML, CSS, and Javascript to re
 ***
 [^1] Defination of connect 4 from: [WikiPedia](https://en.wikipedia.org/wiki/Connect_Four)
 
-Background images from: [DuckDuckGo-Image-Search](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages8.alphacoders.com%2F592%2F592224.jpg&f=1&nofb=1)
+Background images in the game from: [DuckDuckGo-Image-Search](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages8.alphacoders.com%2F592%2F592224.jpg&f=1&nofb=1)
 
 So Much Help from: [StackOverflow](https://stackoverflow.com/)
