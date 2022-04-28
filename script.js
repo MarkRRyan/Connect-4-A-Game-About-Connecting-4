@@ -89,8 +89,8 @@ function draw() {
 }
 
 restartBtn.addEventListener('click', () => {
-    spaces.forEach(slot => {
-        slot.style.backgroundColor = 'white';
+    spaces.forEach(gameSlot => {
+        gameSlot.style.backgroundColor = 'white';
     });
     return (currentPlayer === 1);
 });
