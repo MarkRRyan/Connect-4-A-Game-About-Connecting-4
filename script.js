@@ -6,6 +6,9 @@ const playerOne = 'Blue'
 const playerTwo = 'Green'
 let currentPlayer = playerOne;
 
+// document.getElementById('playerText').innerText = `${currentPlayer} Players Turn`
+
+
 Array.prototype.forEach.call(spaceCell, (cell) => {
     cell.addEventListener('click', changeColor);
     cell.style.backgroundColor = 'white';
@@ -19,21 +22,23 @@ function changeColor(coord) {
         if (spaceRow[i].children[column].style.backgroundColor == 'white'){            
             row.push(spaceRow[i].children[column]);
             if (currentPlayer === playerOne) {
+                document.getElementById('playerText').innerText = `${currentPlayer}'s Turn`
                 row[0].style.backgroundColor = 'rgb(0, 174, 255)';
                 if (hasPlayerWon()){
-                    return alert('Blue is the Winner!!!');
+                    return document.getElementById('playerText').innerText ='Blue is the Winner!!!';
                 } else if (draw()) {
-                    return alert(`It's a Draw!`);
+                    return document.getElementById('playerText').innerText = `It's a Draw!`;
                 } else {
                     return currentPlayer = playerTwo;
                 }
                 
             } else {
+                document.getElementById('playerText').innerText = `${currentPlayer}'s Turn`
                 row[0].style.backgroundColor = 'rgb(14, 192, 14)';
                 if (hasPlayerWon()) {
-                    return alert('Green is the Winner!!!');
+                    return document.getElementById('playerText').innerText = 'Green is the Winner!!!';
                 } else if (draw()) {
-                    return alert(`It's a Draw!`);
+                    return document.getElementById('playerText').innerText = `It's a Draw!`;
                 } else {
                     return currentPlayer = playerOne;
                 }
@@ -92,5 +97,6 @@ restartBtn.addEventListener('click', () => {
     spaces.forEach(gameSlot => {
         gameSlot.style.backgroundColor = 'white';
     });
-    return (currentPlayer === 1);
+    return (currentPlayer === 1),
+    document.getElementById('playerText').innerText = ' '
 });

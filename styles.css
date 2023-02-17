@@ -6,7 +6,7 @@
 body {
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages8.alphacoders.com%2F592%2F592224.jpg&f=1&nofb=1');
   background-position: auto;
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover; */
 }
 
 h1, h2 {
