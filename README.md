@@ -1,7 +1,7 @@
 # Connect-4-A-Game-About-Connecting-4
 ***
 ## Date: 3/6/22
-### Revised 3/11/22
+### Revised 2/22/23
 ***
 ### By Mark Ryan
 ***
@@ -24,8 +24,7 @@ This project was used to create this game as seen above.
 - [x] Refine CSS
 ***
 ### To be Implemented
-- [ ] Score keeping
-- [ ] Text to indicate current players turn 
+- [ ] Score keeping 
 
 ***
 ***
