@@ -7,7 +7,7 @@ const playerTwo = 'Green'
 let currentPlayer = playerOne;
 
 // document.getElementById('playerText').innerText = `${currentPlayer} Players Turn`
-
+// THis is a comment
 
 Array.prototype.forEach.call(spaceCell, (cell) => {
     cell.addEventListener('click', changeColor);
